@@ -6,6 +6,10 @@ Details on how I created this project, can be found on my blog: http://frederick
 
 # Commands
 git clone https://github.com/fvdbosch/LogoLightBox
+
 cd LogoLightBox/
+
 git remote add resin 
+
 git push resin master --force
+
