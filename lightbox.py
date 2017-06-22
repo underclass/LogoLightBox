@@ -5,7 +5,7 @@ import os
 import motephat
 
 motephat.configure_channel(1, 16, False)
-motephat.configure_channel(4, 16, False)
+motephat.configure_channel(2, 16, False)
 
 motephat.set_clear_on_exit(True)
 
@@ -29,6 +29,7 @@ def setMoteColor(r, g, b):
 	motephat.show()
 	motephat.show()
 
+# defines the blink 
 def setMoteBlink(r, g, b):
 	for x in range(4):
 		setMoteColor(r, g, b)
@@ -45,7 +46,7 @@ def main():
 		currentFacebookLikes = getFacebookLikes().strip()
 
 		if(currentFacebookLikes > previousFacebookLikes):
-			setMoteBlink(0,59,111)
+			setMoteBlink(0,0,255)
 			print "Facebook: " + currentFacebookLikes
 			previousFacebookLikes = currentFacebookLikes
 
@@ -58,6 +59,6 @@ def main():
 
 		setMoteColor(255, 255, 255)
 
-		time.sleep(15)
+		time.sleep(10)
 
 main()
