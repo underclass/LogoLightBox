@@ -7,7 +7,7 @@ Details on how I created this project, can be found on my blog: http://frederick
 # Commands
 git clone
 
-cd LogoLightBox
+cd LightBox
 
 git remote add resin
 
