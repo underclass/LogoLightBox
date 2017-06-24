@@ -29,7 +29,7 @@ def setMoteColor(r, g, b):
 	motephat.show()
 	motephat.show()
 
-# defines the blink 
+# defines the blink
 def setMoteBlink(r, g, b):
 	for x in range(4):
 		setMoteColor(r, g, b)
@@ -43,14 +43,14 @@ def main():
 	previousInstagramFollowers = 0
 
 	while(1):
-		currentFacebookLikes = getFacebookLikes().strip()
+		currentFacebookLikes = getFacebookLikes().replace(',','').strip()
 
 		if(currentFacebookLikes > previousFacebookLikes):
 			setMoteBlink(0,0,255)
 			print "Facebook: " + currentFacebookLikes
 			previousFacebookLikes = currentFacebookLikes
 
-		currentInstagramFollowers = getInstagramFollowers().strip()
+		currentInstagramFollowers = getInstagramFollowers().replace(',','').strip()
 
 		if(currentInstagramFollowers > previousInstagramFollowers):
 			setMoteBlink(255, 8, 127)
