@@ -13,12 +13,12 @@ facebookUrl = os.environ.get('facebook')
 instagramUrl = os.environ.get('instagram')
 
 def getFacebookLikes():
-	likes = os.popen("curl -s %s | grep 'Likes:' | grep -o '[0-9|,]\+' | tr -d ','" % facebookUrl).read()
+	likes = os.popen("curl -s %s | grep 'total_likes:' | grep -o '[0-9|,]\+' | tr -d ','" % facebookUrl).read()
 
 	return likes
 
 def getInstagramFollowers():
-	followers = os.popen("curl -s %s | grep -o 'meta content=\"[[:digit:]]\{1,\} Followers' | grep -o '[0-9]\+' | tr -d ','" % instagramUrl).read()
+	followers = os.popen("curl -s %s | grep -o 'meta content=\"[[:digit:]]\{1,\} Followers' | grep -o '[0-9]\+'" % instagramUrl).read()
 
 	return followers
 
@@ -50,7 +50,7 @@ def main():
 			print "Facebook: " + currentFacebookLikes
 			previousFacebookLikes = currentFacebookLikes
 
-		currentInstagramFollowers = getInstagramFollowers().strip()
+		currentInstagramFollowers = getInstagramFollowers().strip().replace(',''')
 
 		if(currentInstagramFollowers > previousInstagramFollowers):
 			setMoteBlink(255, 8, 127)
