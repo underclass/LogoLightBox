@@ -18,7 +18,7 @@ def getFacebookLikes():
 	return likes
 
 def getInstagramFollowers():
-	followers = os.popen("curl -s %s | grep -o 'meta content=\"[[:digit:]]\{1,\} Followers' | grep -o '[0-9]\+'" % instagramUrl).read()
+	followers = os.popen("curl -s %s | grep -o 'meta content=\"[[:digit:]]\{1,\} Followers' | grep -o '[0-9]\+' | tr -d ','" % instagramUrl).read()
 
 	return followers
 
@@ -43,14 +43,14 @@ def main():
 	previousInstagramFollowers = 0
 
 	while(1):
-		currentFacebookLikes = getFacebookLikes().replace(',','').strip()
+		currentFacebookLikes = getFacebookLikes().strip()
 
 		if(currentFacebookLikes > previousFacebookLikes):
 			setMoteBlink(0,0,255)
 			print "Facebook: " + currentFacebookLikes
 			previousFacebookLikes = currentFacebookLikes
 
-		currentInstagramFollowers = getInstagramFollowers().replace(',','').strip()
+		currentInstagramFollowers = getInstagramFollowers().strip()
 
 		if(currentInstagramFollowers > previousInstagramFollowers):
 			setMoteBlink(255, 8, 127)
