@@ -50,12 +50,12 @@ def main():
 			print "Facebook: " + currentFacebookLikes
 			previousFacebookLikes = currentFacebookLikes
 
-		currentInstagramFollowers = getInstagramFollowers().strip().replace(",", "")
+		currentInstagramFollowers = getInstagramFollowers().strip()
 
 		if(currentInstagramFollowers > previousInstagramFollowers):
 			setMoteBlink(255, 8, 127)
-			print "Instagram: " + currentInstagramFollowers.replace(",", "")
-			previousInstagramFollowers = currentInstagramFollowers.replace(",", "")
+			print "Instagram: " + currentInstagramFollowers.strip()
+			previousInstagramFollowers = currentInstagramFollowers.strip()
 
 		setMoteColor(255, 255, 255)
 
