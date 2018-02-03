@@ -51,6 +51,7 @@ def main():
 			previousFacebookLikes = currentFacebookLikes
 
 		currentInstagramFollowers = getInstagramFollowers().strip()
+		getInstagramFollowers().replace(',''')
 
 		if(currentInstagramFollowers > previousInstagramFollowers):
 			setMoteBlink(255, 8, 127)
