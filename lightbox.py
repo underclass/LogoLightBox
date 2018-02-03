@@ -54,8 +54,8 @@ def main():
 
 		if(currentInstagramFollowers > previousInstagramFollowers):
 			setMoteBlink(255, 8, 127)
-			print "Instagram: " + currentInstagramFollowers.strip()
-			previousInstagramFollowers = currentInstagramFollowers.strip()
+			print "Instagram: " + currentInstagramFollowers
+			previousInstagramFollowers = currentInstagramFollowers
 
 		setMoteColor(255, 255, 255)
 
