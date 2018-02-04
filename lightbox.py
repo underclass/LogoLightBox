@@ -13,12 +13,12 @@ facebookUrl = os.environ.get('facebook')
 instagramUrl = os.environ.get('instagram')
 
 def getFacebookLikes():
-	likes = os.popen("curl -s %s | grep 'total_likes:' | grep -o '[0-9|,]\+' | tr -d ','" % facebookUrl).read()
+	likes = os.popen("curl -s %s | grep 'total_likes:' | grep -o '[0-9]\+' | tr -d ','" % facebookUrl).read()
 
 	return likes
 
 def getInstagramFollowers():
-	followers = os.popen("curl -s %s | grep -o 'meta content=\"[[:digit:]]\{1,\} Followers' | grep -o '[0-9|,]\+'" % instagramUrl).read()
+	followers = os.popen("curl -s %s | grep -o 'meta content=\"[[:digit:]]\{1,\} Followers' | grep -o '[0-9|,]\+' | tr -d ','" % instagramUrl).read()
 
 	return followers
 
