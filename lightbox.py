@@ -20,8 +20,6 @@ def getFacebookLikes():
 def getInstagramFollowers():
 	followers = os.popen("curl -s %s | grep -o 'meta content=\"[[:digit:]]\{1,\} Followers' | grep -o '[0-9|,]\+'" % instagramUrl).read()
 
-	meta content="208 Followers,
-
 	return followers
 
 def setMoteColor(r, g, b):
