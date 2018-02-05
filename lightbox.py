@@ -18,9 +18,15 @@ def getFacebookLikes():
 	return likes
 
 def getInstagramFollowers():
-	followers = os.popen("curl -s %s | grep -o 'meta content=\"[[:digit:]]\{1,\} Followers' | grep -o '[0-9|,]'" % instagramUrl).read()
+	followers = os.popen("curl -s %s | grep -o 'meta content=\"[0-9|,]\{1,\} Followers' | grep -o '[0-9]\+'" % instagramUrl).read()
 
+	#grep -o = only the matched subsection of the line should get printed
 	#[[:digit:]] = any number
+	#
+	#
+	#
+	#
+	#
 
 	return followers
 
