@@ -15,9 +15,6 @@ instagramUrl = os.environ.get('instagram')
 def getFacebookLikes():
 	likes = os.popen("curl -s %s | grep -o 'total_likes\":[0-9|,]\{1,\}' | grep -o '[0-9|,]\+' | tr -d ','" % facebookUrl).read()
 
-	# "total_likes":62
-	# meta content="3,149 Followers
-
 	return likes
 
 def getInstagramFollowers():
