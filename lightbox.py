@@ -17,14 +17,12 @@ def getFacebookLikes():
 
 	return likes
 
-#making changes here
-
 def getInstagramFollowers():
 	followers = os.popen("curl -s %s | grep -o 'meta content=\"[[:digit:]]\{1,\} Followers' | grep -o '[0-9|,]'" % instagramUrl).read()
 
-	#'meta content=\"[[:digit:]]\{1,\} Followers' | grep -o '[0-9|,]\+'
+	#[[:digit:]] = any number
 
-	return followers.replace(',','')
+	return followers
 
 def setMoteColor(r, g, b):
 	# http://forums.pimoroni.com/t/mote-phat-not-all-leds-are-lighting-on-first-show/3740/3
