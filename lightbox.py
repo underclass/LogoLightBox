@@ -61,6 +61,6 @@ def main():
 
 		setMoteColor(255, 255, 255)
 
-		time.sleep(10)
+		time.sleep(60)
 
 main()
