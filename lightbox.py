@@ -16,8 +16,13 @@ def getFacebookLikes():
 	likes = os.popen("curl -s %s | grep 'total_likes:' | grep -o '[0-9|,]\+' | tr -d ','" % facebookUrl).read()
 
 	return likes
+<<<<<<< HEAD
 
 #making changes here
+=======
+	
+#test
+>>>>>>> a7930d8b8180727159ac89af98d612db91b66c40
 def getInstagramFollowers():
 	followers = os.popen("curl -s %s | grep -o 'meta content=\"[[:digit:]]\{1,\} Followers' | grep -o '[0-9]\+'" % instagramUrl).read()
 
