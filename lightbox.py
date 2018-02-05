@@ -20,7 +20,7 @@ def getFacebookLikes():
 #making changes here
 
 def getInstagramFollowers():
-	followers = os.popen("curl -s %s | grep -o 'meta content=\"[[:digit:]]*) Followers' | grep -o '[0-9]\+'" % instagramUrl).read()
+	followers = os.popen("curl -s %s | grep -o 'meta content=\"([.,\/]?\d+) Followers' | grep -o '[0-9]\+'" % instagramUrl).read()
 
 	return followers.replace(',','')
 
