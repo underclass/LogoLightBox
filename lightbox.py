@@ -50,7 +50,7 @@ def main():
 			print "Facebook: " + currentFacebookLikes
 			previousFacebookLikes = currentFacebookLikes
 
-		int(currentInstagramFollowers.replace(',','')) = getInstagramFollowers().strip()
+		currentInstagramFollowers = int(getInstagramFollowers().replace(',',''))
 
 		if(currentInstagramFollowers > previousInstagramFollowers):
 			setMoteBlink(255, 8, 127)
